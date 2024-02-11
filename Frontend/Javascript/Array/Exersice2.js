@@ -16,6 +16,28 @@
 
 
 
+
+
+// const rl = readLine.createInterface({ input, output }): This line creates a new Readline interface using the createInterface() method of the readline module.It takes an options object as an argument, where input and output properties specify the readable and writable streams to be used for input and output, respectively.In this case, it uses the stdin and stdout streams obtained from the process module.
+// By creating this Readline interface, you can use methods like rl.question() to prompt the user for input and handle user input asynchronously.
+
+
+
+
+// stdin(Standard Input):
+
+// stdin is the standard input stream, typically associated with keyboard input.
+// It is used to read input data into a program from an external source, such as a user typing on the keyboard or input redirected from a file.
+// By default, when you run a program in a terminal or command prompt, stdin is connected to the keyboard, allowing the program to accept input from the user interactively.
+// In Node.js, stdin is represented by the process.stdin stream.
+//     stdout(Standard Output):
+
+// stdout is the standard output stream, typically associated with text output displayed on the console or terminal.
+// It is used to write output data from a program to the console or terminal window.
+// By default, when you run a program in a terminal or command prompt, stdout is connected to the terminal window, allowing the program to display output to the user.
+// In Node.js, stdout is represented by the process.stdout stream.
+// These standard streams(stdin and stdout) are fundamental components of the input / output system in operating systems and programming languages.They provide a standardized way for programs to interact with their environment, enabling input from users and output to be displayed on the screen or redirected to other destinations, such as files or network connections.
+
 const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
 

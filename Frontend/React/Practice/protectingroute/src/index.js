@@ -4,14 +4,30 @@ import './index.css';
 import App from './App';
 import Home from './pages/home.js';
 import Auth from './pages/auth.js';
-import Login from './pages/protected.js'
-import Signup from './pages/signup.js';
+import Login from './pages/login.js'
+import Signup from './pages/logout.js';
 import Admin from './pages/admin.js';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './context/AuthContext.js';
 
-
+import { useState } from 'react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+const MainComponent = () => {
+
+
+  return (
+    <>
+      <AuthProvider  >
+        <RouterProvider router={router}>
+        </RouterProvider>
+      </AuthProvider>
+    </>
+  )
+
+}
 
 const router = createBrowserRouter([
   {
@@ -32,7 +48,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/signUp',
+    path: '/logout',
     element: (
       <Auth authenticated={false}>
         <Signup />
@@ -41,8 +57,9 @@ const router = createBrowserRouter([
   },
 ]);
 root.render(
+  <MainComponent>
 
-  <RouterProvider router={router}></RouterProvider>
+  </MainComponent>
 );
 
 // If you want to start measuring performance in your app, pass a function
